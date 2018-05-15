@@ -3,7 +3,7 @@
 > Review the documentation for your compiler and determine what file naming convention it uses. Compile and run the main program from page 2.
 
  * [GCC and File Extensions](http://labor-liber.org/en/gnu-linux/development/extensions) 
- * [File Types Created for Visual C++ Projects](https://msdn.microsoft.com/en-us/library/3awe4781.aspx)
+ * [File Types Created for Visual C++ Projects](https://docs.microsoft.com/en-us/cpp/ide/file-types-created-for-visual-cpp-projects)
 
 ## Exercise 1.2
 

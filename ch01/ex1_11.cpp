@@ -2,8 +2,7 @@
 
 #include <iostream>
 
-using std::cout;
-using std::cin;
+using namespace std;
 
 void print_range(int lo, int hi)
 {
@@ -12,15 +11,18 @@ void print_range(int lo, int hi)
         print_range(hi, lo);
         return;
     }
-    for (int i = lo; i != hi; ++i)
-        cout << i << " ";
+    while (lo <= hi)
+    {
+        cout << lo++ << " ";
+    }
+    cout << endl;
 }
 
 int main()
 {
-    int low = 0, high = 0;
-    cout << "please input two integers:\n";
-    cin >> low >> high;
-    print_range(low, high);
+    cout << "Enter two numbers:" << endl;
+    int lo = 0, hi = 0;
+    cin >> lo >> hi;
+    print_range(lo, hi);
     return 0;
 }
