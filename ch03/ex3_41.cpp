@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-using std::vector; using std::cout; using std::endl; using std::begin; using std::end;
+using namespace std;
 
 int main()
 {

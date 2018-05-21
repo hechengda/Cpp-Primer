@@ -2,17 +2,15 @@
 //Print the concatenated string.
 #include <iostream>
 #include <string>
-
-using std::string;
-using std::cin;
-using std::cout;
-using std::endl;
+using namespace std;
 
 int main()
 {
-    string concatenated;
-    for (string buffer; cin >> buffer; concatenated += buffer);
-    cout << "The concatenated string is " << concatenated << endl;
-
+    string concat, str;
+    while (cin >> str)
+    {
+        concat += str;
+    }
+    cout << "The concatenated string is " << concat << endl;
     return 0;
 }

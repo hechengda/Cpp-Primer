@@ -1,29 +1,25 @@
 #include <iostream>
 #include <vector>
-
-using std::vector;
-using std::cout;
-using std::endl;
-using std::cin;
+using namespace std;
 
 int main()
 {
     vector<int> ivec;
     for (int i; cin >> i; ivec.push_back(i));
 
-    if (ivec.empty())
+    for (decltype(ivec.size()) i = 0; i != ivec.size(); i++)
     {
-        cout << "input at least one integer." << endl;
-        return -1;
+        if (!(i % 2))
+        {
+            if ((i + 1) != ivec.size())
+            {
+                cout << (ivec[i] + ivec[ivec.size() - 1 - i]) << endl;
+            }
+            else
+            {
+                cout << ivec[i / 2] << endl;
+            }
+        }
     }
-
-    auto size = ivec.size();
-    if (size % 2 != 0) size = size / 2 + 1;
-    else size /= 2;
-
-    for (int i = 0; i != size; ++i)
-        cout << ivec[i] + ivec[ivec.size() - i - 1] << " ";
-    cout << endl;
-
     return 0;
 }

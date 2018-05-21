@@ -1,29 +1,34 @@
 #include <iostream>
-using std::cout; using std::endl;
+using namespace std;
 
 int main()
 {
-    int arr[3][4] = 
-    { 
-        { 0, 1, 2, 3 },
-        { 4, 5, 6, 7 },
-        { 8, 9, 10, 11 }
-    };
-
-    // range for
-    for (const int(&row)[4] : arr)
-        for (int col : row) cout << col << " ";
+    int ia[3][4] = { 0,1,2,3,4,5,6,7,8,9,10,11 };
+    for (int(&row)[4] : ia)
+    {
+        for (int col : row)
+        {
+            cout << col << " ";
+        }
+    }
     cout << endl;
 
-    // for loop
-    for (size_t i = 0; i != 3; ++i)
-        for (size_t j = 0; j != 4; ++j) cout << arr[i][j] << " ";
+    for (size_t row = 0; row != 3; ++row)
+    {
+        for (size_t col = 0; col != 4; ++col)
+        {
+            cout << ia[row][col] << " ";
+        }
+    }
     cout << endl;
 
-    // using pointers.
-    for (int(*row)[4] = arr; row != arr + 3; ++row)
-        for (int *col = *row; col != *row + 4; ++col) cout << *col << " ";
+    for (int(*row)[4] = begin(ia); row != end(ia); ++row)
+    {
+        for (int *col = begin(*row); col != end(*row); ++col)
+        {
+            cout << *col << " ";
+        }
+    }
     cout << endl;
-
     return 0;
 }

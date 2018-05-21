@@ -1,7 +1,8 @@
 #include <vector>
+using std::vector;
 
 int main()
 {
-    std::vector<int> ivec{ 42 };
+    vector<int> ivec{ 42 };
     return 0;
 }

@@ -1,30 +1,35 @@
 #include <iostream>
-using std::cout; using std::endl;
+using namespace std;
 
 int main()
 {
-    int ia[3][4] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-
-    // a range for to manage the iteration
-    // use type alias
+    int ia[3][4] = { 0,1,2,3,4,5,6,7,8,9,10,11 };
     using int_array = int[4];
-    for (int_array& p : ia)
-        for (int q : p)
-            cout << q << " ";
+    for (int_array &row : ia)
+    {
+        for (int col : row)
+        {
+            cout << col << " ";
+        }
+    }
     cout << endl;
 
-    // ordinary for loop using subscripts
-    for (size_t i = 0; i != 3; ++i)
-        for (size_t j = 0; j != 4; ++j)
-            cout << ia[i][j] << " ";
+    for (size_t row = 0; row != 3; ++row)
+    {
+        for (size_t col = 0; col != 4; ++col)
+        {
+            cout << ia[row][col] << " ";
+        }
+    }
     cout << endl;
 
-    // using pointers.
-    // use type alias
-    for (int_array* p = ia; p != ia + 3; ++p)
-        for (int *q = *p; q != *p + 4; ++q)
-            cout << *q << " ";
+    for (int_array *row = begin(ia); row != end(ia); ++row)
+    {
+        for (int *col = begin(*row); col != end(*row); ++col)
+        {
+            cout << *col << " ";
+        }
+    }
     cout << endl;
-
     return 0;
 }

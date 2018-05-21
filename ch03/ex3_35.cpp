@@ -1,13 +1,18 @@
 #include <iostream>
-using std::cout; using std::endl;
+using namespace std;
 
 int main()
 {
-    const int size = 10;
-    int arr[size];
-    for (auto ptr = arr; ptr != arr + size; ++ptr) *ptr = 0;
+    int a[10];
+    for (auto p = begin(a); p != end(a); p++)
+    {
+        *p = 0;
+    }
 
-    for (auto i : arr) cout << i << " ";
+    for (auto i : a)
+    {
+        cout << i << " ";
+    }
     cout << endl;
 
     return 0;

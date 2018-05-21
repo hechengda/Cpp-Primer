@@ -4,17 +4,22 @@
 // Test your program by printing the vector.
 //
 
-#include <vector>
 #include <iostream>
+#include <vector>
 #include <iterator>
-
-using std::vector; using std::iterator; using std::cout;
+using namespace std;
 
 int main()
 {
-    vector<int> v{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    for (auto it = v.begin(); it != v.end(); ++it) *it *= 2;
-    for (auto i : v) cout << i << " ";
+    vector<int> ivec(10, 1);
+    for (auto it = ivec.begin(); it != ivec.end(); it++)
+    {
+        *it *= 2;
+    }
 
+    for (auto i : ivec)
+    {
+        cout << i << " ";
+    }
     return 0;
 }
