@@ -4,27 +4,22 @@
 //  @frank67 Rewrite using the 'continue' statement. See #250
 
 #include <iostream>
-using std::cin; using std::cout; using std::endl;
 #include <string>
-using std::string;
+using namespace std;
 
 int main()
 {
-    string curr, prev;
-    bool no_twice = true;
-    while (cin >> curr) 
+    for (string w, prew; cin >> w && !w.empty(); prew = w)
     {
-        if (isupper(curr[0]) && prev == curr)
+        if (isupper(w[0]) && w == prew)
         {
-            cout << curr << ": occurs twice in succession." << endl;
-            no_twice = false;
+            cout << w << " occurs twice in succession." << endl;
             break;
         }
-        prev = curr;
     }
-
-    if (no_twice)
+    if (cin.eof())
+    {
         cout << "no word was repeated." << endl;
-
+    }
     return 0;
 }

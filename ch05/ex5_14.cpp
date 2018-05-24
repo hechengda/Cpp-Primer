@@ -1,21 +1,34 @@
 #include <iostream>
 #include <string>
-
-using std::cout; using std::cin; using std::endl; using std::string; using std::pair;
+using namespace std;
 
 int main()
-{ 
-    pair<string, int> max_duplicated;
+{
+    pair<string, int> max_dup;
     int count = 0;
-    for (string str, prestr; cin >> str; prestr = str)
+
+    for (string w, prew; cin >> w; prew = w)
     {
-        if (str == prestr) ++count;
-        else count = 0; 
-        if (count > max_duplicated.second) max_duplicated = { prestr, count };
+        if (w == prew)
+        {
+            ++count;
+        }
+        else
+        {
+            count = 0;
+        }
+        if (count > max_dup.second)
+        {
+            max_dup = { w, count };
+        }
     }
-    
-    if (max_duplicated.first.empty()) cout << "There's no duplicated string." << endl;
-    else cout << "the word " << max_duplicated.first << " occurred " << max_duplicated.second + 1 << " times. " << endl;
-    
+    if (max_dup.first.empty())
+    {
+        cout << "There's no duplicated string." << endl;
+    }
+    else
+    {
+        cout << "The word " << max_dup.first << " occured " << max_dup.second + 1 << " times." << endl;
+    }
     return 0;
 }

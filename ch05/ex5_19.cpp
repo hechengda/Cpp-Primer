@@ -1,19 +1,15 @@
 #include <iostream>
 #include <string>
-
-using std::cout; using std::cin; using std::endl; using std::string;
+using namespace std;
 
 int main()
 {
-    string rsp;
-    do {
-        cout << "Input two strings: ";
-        string str1, str2;
+    do
+    {
+        cout << "please enter two strings: " << endl;
+        string str1 = "", str2 = "";
         cin >> str1 >> str2;
-        cout << (str1 <= str2 ? str1 : str2) 
-             << " is less than the other. " << "\n\n"
-             << "More? Enter yes or no: ";
-        cin >> rsp;
-    } while (!rsp.empty() && tolower(rsp[0]) == 'y');
+        cout << (str1 < str2 ? str1 : str2) << endl;
+    } while (cin);
     return 0;
 }

@@ -1,13 +1,10 @@
 #include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
+using namespace std;
 
-int main() 
+int main()
 {
-    int i, j; 
+    int i, j;
     cin >> i >> j;
     cout << i / j << endl;
- 
     return 0;
 }

@@ -1,15 +1,26 @@
 #include <iostream>
 #include <string>
-using std::cout; using std::cin; using std::endl; using std::string;
+using namespace std;
 
 int main()
 {
-    string read, tmp;
-    while (cin >> read)
-        if (read == tmp) break; else tmp = read;
+    string w, prew;
 
-    if (cin.eof())  cout << "no word was repeated." << endl;
-    else            cout << read << " occurs twice in succession." << endl;
-
+    while (cin >> w)
+    {
+        if (w == prew)
+        {
+            break;
+        }
+        prew = w;
+    }
+    if (cin.eof())
+    {
+        cout << "no word was repeated." << endl;
+    }
+    else
+    {
+        cout << w << " occurs twice in succession." << endl;
+    }
     return 0;
 }
