@@ -1,17 +1,25 @@
 #include <iostream>
 #include <string>
-using std::cout; using std::endl; using std::string;
+using namespace std;
 
-bool any_capital(string const& str)
+bool any_capital(const string &str)
 {
-    for (auto ch : str)
-        if (isupper(ch)) return true;
+    for (auto c : str)
+    {
+        if (isupper(c))
+        {
+            return true;
+        }
+    }
     return false;
 }
 
-void to_lowercase(string& str)
+void to_lowercase(string &str)
 {
-    for (auto& ch : str) ch = tolower(ch);
+    for (auto &c : str)
+    {
+        c = tolower(c);
+    }
 }
 
 int main()

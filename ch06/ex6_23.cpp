@@ -42,7 +42,7 @@ int main()
     print(begin(j), end(j));
     print(&i);
     print(j, end(j)-begin(j));
-    print(j);
+    //print(j);
     
     return 0;
 }
